@@ -195,7 +195,7 @@ SUBARCH := arm
 SUBARCH := arm
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= $(SUBARCH)
-CROSS_COMPILE	?= /home/akshay/android/supernexus/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7/bin/arm-eabi-
+CROSS_COMPILE	?= yourtoolchain
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
