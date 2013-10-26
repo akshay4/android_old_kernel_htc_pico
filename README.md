@@ -1,4 +1,4 @@
-Linux Kernel 3.0.87 for Htc Explorer (Pico)
+Linux Kernel 3.0.101[EOL] for Htc Explorer (Pico)
 
 WORKING
 =======
