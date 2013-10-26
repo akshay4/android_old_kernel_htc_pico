@@ -3,6 +3,7 @@
 #
 
 obj-y				+= mem.o random.o
+obj-$(CONFIG_FRANDOM)    	+= frandom.o
 obj-$(CONFIG_TTY_PRINTK)	+= ttyprintk.o
 obj-y				+= misc.o
 obj-$(CONFIG_ATARI_DSP56K)	+= dsp56k.o
@@ -64,9 +65,6 @@ obj-$(CONFIG_RAMOOPS)		+= ramoops.o
 obj-$(CONFIG_JS_RTC)		+= js-rtc.o
 js-rtc-y = rtc.o
 
-ifneq ($(CONFIG_MSM_ROTATOR_LEGACY),y)
 obj-$(CONFIG_MSM_ROTATOR)	+= msm_rotator.o
-else
-obj-$(CONFIG_MSM_ROTATOR)	+= msm_rotator-legacy.o
-endif
+
 obj-$(CONFIG_MMC_GENERIC_CSDIO)	+= csdio.o

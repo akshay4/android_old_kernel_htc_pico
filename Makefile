@@ -1,8 +1,8 @@
 VERSION = 3
 PATCHLEVEL = 0
-SUBLEVEL = 89
+SUBLEVEL = 101
 EXTRAVERSION =
-NAME = Sneaky Weasel
+NAME = Sodden Ben Lomond
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
@@ -31,7 +31,7 @@ export LC_COLLATE LC_NUMERIC
 # unavoidable when linking the built-in.o targets which finally
 # turn into vmlinux), we will call a sub make in that other dir, and
 # after that we are sure that everything which is in that other dir
-# is now up to date.	
+# is now up to date.
 #
 # The only cases where we need to modify files which have global
 # effects are thus separated out and done before the recursive
@@ -194,8 +194,8 @@ SUBARCH := arm
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 SUBARCH := arm
 export KBUILD_BUILDHOST := $(SUBARCH)
-ARCH		?= $(SUBARCH)
-CROSS_COMPILE	?= yourtoolchain
+ARCH		?= arm
+CROSS_COMPILE	?= /home/akshay/android/toolchains/arm-eabi-4.7/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -332,7 +332,7 @@ include $(srctree)/scripts/Kbuild.include
 
 AS		= $(CROSS_COMPILE)as
 LD		= $(CROSS_COMPILE)ld
-REAL_CC		= $(CROSS_COMPILE)gcc
+CC		= $(CROSS_COMPILE)gcc
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
 NM		= $(CROSS_COMPILE)nm
@@ -360,7 +360,7 @@ ARM_FLAGS       = -funswitch-loops \
 
 # Use the wrapper for the compiler.  This wrapper scans for new
 # warnings and causes the build to stop upon encountering them.
-CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
+#CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
@@ -390,7 +390,7 @@ KBUILD_CFLAGS   := -Wno-trigraphs \
                    -ftree-vectorize -funsafe-math-optimizations \
                    -fsched-spec-load -mvectorize-with-neon-quad \
                    -fmodulo-sched -fmodulo-sched-allow-regmoves \
-		   -fno-delete-null-pointer-checks \
+				   -fno-delete-null-pointer-checks \
                     $(ARM_FLAGS)
 
 KBUILD_AFLAGS_KERNEL :=
