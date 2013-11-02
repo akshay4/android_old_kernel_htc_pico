@@ -390,7 +390,7 @@ KBUILD_CFLAGS   := -Wno-trigraphs \
                    -ftree-vectorize -funsafe-math-optimizations \
                    -fsched-spec-load -mvectorize-with-neon-quad \
                    -fmodulo-sched -fmodulo-sched-allow-regmoves \
-       -fno-delete-null-pointer-checks \ 
+       -fno-delete-null-pointer-checks \
                     $(ARM_FLAGS)
 
 KBUILD_AFLAGS_KERNEL :=
